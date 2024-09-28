@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from 'axios';
 import WelcomeSign from './WelcomeSign'; 
 import LocationSearch from './LocationSearch';
@@ -36,7 +35,6 @@ const App: React.FC = () => {
       const updatedLocations = [...savedLocations, currentLocation];
       setSavedLocations(updatedLocations);
       saveToLocalStorage('locations', JSON.stringify(updatedLocations));
-      
     }
   };
 
@@ -52,14 +50,12 @@ const App: React.FC = () => {
     e.preventDefault();
     const cityName = e.dataTransfer.getData('text/plain');
     
-  
     // Optionally trigger a search for the dropped city
     setCurrentLocation(cityName);
   }
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault(); // Prevent default to allow drop
-   
   };
 
   return (
@@ -70,9 +66,10 @@ const App: React.FC = () => {
       {/* Current Weather Display */}
       <LocationSearch setLocation={setCurrentLocation} />
       
+      {/* Main Weather Card */} 
       {weatherData ? (
         <div className="main-card" onDrop={handleDrop} onDragOver={handleDragOver}>
-          <h2 id='main-card-loaction-name'>Weather in {weatherData.location.name}</h2>
+          <h2 id='main-card-location-name'>Weather in {weatherData.location.name}</h2>
           <p id='main-card-temp'>Temperature: {String(weatherData.current.temp_c)} °C</p>
           <p id='main-card-icon-info'>Current weather icon: <img id='weather-icon' src={weatherData.current.condition.icon} alt="weather icon" /></p>
           

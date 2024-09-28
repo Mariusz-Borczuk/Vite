@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.scss';
+
 interface SmallWeatherCardProps {
     location: string;
     onDelete: (location: string) => void;
@@ -40,13 +41,11 @@ const SmallWeatherCard: React.FC<SmallWeatherCardProps> = ({ location, onDelete 
                         <h3>{weatherData.location.name}</h3>
                         <p>{weatherData.current.temp_c} °C</p>
                         <p>{weatherData.current.condition.text}</p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <button id='small-card-button-delete' onClick={() => onDelete(location)}>Delete</button> {/* Delete button */}
+                        {/* Delete button */}
+                        <button id='small-card-button-delete' onClick={() => onDelete(location)}>Delete</button>
                     </div>
                 ) : (
+                    // Display loading text while fetching data
                     <p>Loading...</p>
                 )}
             </div>

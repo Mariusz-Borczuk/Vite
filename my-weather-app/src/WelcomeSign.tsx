@@ -1,5 +1,5 @@
 import React from 'react';
-import './WelcomeSign.scss'; // We'll add CSS animations in this file
+import './WelcomeSign.scss'; 
 
 const WelcomeSign: React.FC = () => {
   return (
