@@ -14,7 +14,6 @@ const LocationSearch: React.FC<LocationSearchProps> = ({ setLocation }) => {
     }
   };
   
-
   return (
     <div id='location-search-container'>
       <input id='location-input'

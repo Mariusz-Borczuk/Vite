@@ -14,7 +14,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 200%;
+	height: 100%;
 }
 .container {
 	background: rgba(255, 255, 255, 0.1);
@@ -67,8 +67,9 @@ h2 { //Main Headings
 #whether-icon {
 	top: 20px;
 	width:  36px;
-	height: 36px;
-}#additional-val {
+	height: 36px;	
+}
+#additional-val {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

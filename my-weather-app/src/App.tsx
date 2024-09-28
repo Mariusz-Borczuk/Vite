@@ -30,36 +30,36 @@ const App: React.FC = () => {
     fetchWeather(currentLocation);
   }, [currentLocation]);
 
+  // Save current location to saved locations
   const handleAddLocation = () => {
     if (!savedLocations.includes(currentLocation)) {
       const updatedLocations = [...savedLocations, currentLocation];
       setSavedLocations(updatedLocations);
       saveToLocalStorage('locations', JSON.stringify(updatedLocations));
+      
     }
   };
 
+  // Delete location from saved locations
   const handleDeleteLocation = (locationToDelete: string) => {
     const updatedLocations = savedLocations.filter(location => location !== locationToDelete);
     setSavedLocations(updatedLocations);
     saveToLocalStorage('locations', JSON.stringify(updatedLocations));
   };
 
+  // Drag and drop functionality
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const cityName = e.dataTransfer.getData('text/plain');
     
-    if (!savedLocations.includes(cityName)) {
-      const updatedLocations = [...savedLocations, cityName];
-      setSavedLocations(updatedLocations);
-      saveToLocalStorage('locations', JSON.stringify(updatedLocations));
-    }
-    
+  
     // Optionally trigger a search for the dropped city
     setCurrentLocation(cityName);
-  };
+  }
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault(); // Prevent default to allow drop
+   
   };
 
   return (
