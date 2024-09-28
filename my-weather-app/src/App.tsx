@@ -10,7 +10,7 @@ import './App.scss';
 const App: React.FC = () => {
   const [weatherData, setWeatherData] = useState<any>(null);
   const [currentLocation, setCurrentLocation] = useState<string>(getFromLocalStorage('currentLocation') || 'London');
-  const [savedLocations, setSavedLocations] = useState<string[]>(getFromLocalStorage('locations') || []);
+  const [savedLocations, setSavedLocations] = useState<string[]>(JSON.parse(getFromLocalStorage('locations') || '[]'));
   const [showAdditionalValues, setShowAdditionalValues] = useState<boolean>(false);
 
   useEffect(() => {

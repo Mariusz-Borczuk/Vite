@@ -8,7 +8,8 @@ interface LocationSearchProps {
 const LocationSearch: React.FC<LocationSearchProps> = ({ setLocation }) => {
   const [input, setInput] = useState<string>('');
 
-  const handleSearch = () => {
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
     if (input) {
       setLocation(input);
     }
@@ -22,12 +23,11 @@ const LocationSearch: React.FC<LocationSearchProps> = ({ setLocation }) => {
       onChange={(e) => setInput(e.target.value)}
       onKeyUp={(e) => {
         if (e.key === 'Enter') {
-        handleSearch();
+        handleSearch(e);
         }
       }}
-      placeholder="Enter city"
-      />
-      <button id='location-button-search' onClick={handleSearch}>Search</button>
+      placeholder="Enter city" />
+      <button id='location-button-search' onClick={(e) => handleSearch(e)}>Search</button>    
     </div>
   );
 };
