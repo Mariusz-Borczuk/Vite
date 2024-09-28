@@ -1,0 +1,19 @@
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: pink;
+    margin-bottom: 10px;
+}
+body {
+    background: midnightblue;
+}
+
+.small {
+    font-size: 12px;
+    color: gray;
+}
+
+.small2 {
+    font-size: 14px;
+    color: yellow;
+}

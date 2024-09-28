@@ -1,0 +1,26 @@
+﻿$color_1: #34DBA5;
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.welcome-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	margin-bottom: 20px;
+}
+.welcome-text {
+	font-size: 2.5rem;
+	font-weight: bold;
+	color: $color_1;
+	animation: slideIn 2s ease-out;
+	text-shadow: 2px 2px 4px #000000;
+}

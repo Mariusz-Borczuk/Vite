@@ -1,0 +1,166 @@
+﻿$color_1: #fff;
+$color_2: #ccc;
+$font-family_1: Arial, sans-serif;
+$background-color_1: #1e3a8a;
+$background-color_1_10: #192f6e;
+$background-color_2: #004d40;
+
+body {
+	font-family: $font-family_1;
+	background: linear-gradient(to right, #6a11cb, #2575fc);
+	color: $color_1;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200%;
+}
+.container {
+	background: rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	width: 475px;
+}
+h2 { //Main Headings
+	font-size: 2.5em;
+	margin-bottom: 10px;
+}
+//Main Weather Card
+.main-card {
+	background-color: $background-color_1;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	width: 100%;
+	margin-top: 20px;
+	box-sizing: border-box;
+	h2 {
+		font-size: 2.5em;
+		margin-bottom: 15px;
+	}
+	p {
+		font-size: 1.2em;
+		margin: 10px 0;
+	}
+}
+//City attributes
+#main-card-loaction-name {
+	border: 1px solid $color_2;
+	border-radius: 8px;
+	padding: 5px;
+	background-color: $background-color_1_10;
+}
+#main-card-temp {
+	font-size: 1.9em;
+	font-weight: bold;
+}
+#main-card-icon-info {
+	font-size: 1.4em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#whether-icon {
+	top: 20px;
+	width:  36px;
+	height: 36px;
+}#additional-val {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 80%;
+	margin-top: 20px;
+
+	button {
+		width: 20%;
+	}
+
+	button {
+		padding: 10px 20px;
+		border-radius: 5px;
+		border: none;
+		background-color: $background-color_1;
+		color: $color_1;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color:$background-color_1_10;
+		}
+	}
+}
+//Search bar with button
+#location-input {
+	display: inline-block;
+	margin: 20px 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: calc(70% - 20px);
+	max-width: 300px;
+	box-sizing: border-box;
+}
+#location-button-search {
+	display: inline-block;
+	margin: 20px 10px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: calc(30% - 20px);
+	max-width: 300px;
+	box-sizing: border-box;
+}
+//Saved Locations small cards
+.saved-locations {
+	display: flex;
+	gap: 10px;
+	flex-wrap:wrap;
+	flex-direction: row;
+	min-width: 150px;
+	min-height: 225px;
+	max-height: 2250px;
+	justify-content: left;
+}
+.small-card-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+.small-card {
+	position: relative;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 8px;
+	background-color: $background-color_2;
+	width: 150px;
+	height: 225px;
+	text-align: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	h3 {
+		font-size: 1rem;
+		margin-top: 16px;
+	}
+
+	p {
+		margin: 5px 0;
+	}
+}
+#small-card-button-delete {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	
+	}
